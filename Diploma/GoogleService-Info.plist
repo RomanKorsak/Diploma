@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>188303740549-6v7jeg531ohh87pvuku03a969l5c2v2h.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.188303740549-6v7jeg531ohh87pvuku03a969l5c2v2h</string>
+	<key>API_KEY</key>
+	<string>AIzaSyA_LL5JrksdPqEROoxUWMdI6gOAfR_WVaA</string>
+	<key>GCM_SENDER_ID</key>
+	<string>188303740549</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>romanMAC.Diploma</string>
+	<key>PROJECT_ID</key>
+	<string>diploma-4536b</string>
+	<key>STORAGE_BUCKET</key>
+	<string>diploma-4536b.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:188303740549:ios:bb63f86e77e7cc1e66a3ec</string>
+</dict>
+</plist>
