@@ -8,8 +8,10 @@
 import Firebase
 import UIKit
 
-class LoginViewController: UIViewController {
+final class LoginViewController: UIViewController {
     var ref: DatabaseReference!
+    
+    
     
     @IBOutlet var passwordTextField: UITextField!
     @IBOutlet var emailTextField: UITextField!
@@ -18,18 +20,15 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         ref = Database.database().reference(withPath: "users")
         
         Auth.auth().addStateDidChangeListener { [weak self] _, user in
-            guard let  _ = user else { return }
+            guard let _ = user else { return }
             self?.performSegue(withIdentifier: "ToHomePageSegue", sender: nil)
         }
     }
 
-    
-    
-    //MARK: - functions
+    // MARK: - functions
     
     @IBAction private func loginButton() {
         guard let email = emailTextField.text,
@@ -40,16 +39,16 @@ class LoginViewController: UIViewController {
             return
         }
         
-        Auth.auth().signIn(withEmail: email, password: password) { [weak self] user, error  in
+        Auth.auth().signIn(withEmail: email, password: password) { [weak self] user, error in
             if let error = error {
                 self?.displayWarningLabel(withText: "Registration error: \(error.localizedDescription)")
-            }else if let _ = user{
+            } else if let _ = user {
                 self?.performSegue(withIdentifier: "ToHomePageSegue", sender: nil)
+
             } else {
                 self?.displayWarningLabel(withText: "Something Go Wrong")
             }
         }
-        
         emailTextField.text = ""
         passwordTextField.text = ""
     }
@@ -63,25 +62,21 @@ class LoginViewController: UIViewController {
             return
         }
         
-        Auth.auth().createUser(withEmail: email, password: password) { [weak self] user, error  in
+        Auth.auth().createUser(withEmail: email, password: password) { [weak self] user, error in
             if let error = error {
                 self?.displayWarningLabel(withText: "Registration error: \(error.localizedDescription)")
-            }else if let user = user{
+            } else if let user = user {
                 let userRef = self?.ref.child(user.user.uid)
                 userRef?.setValue(["email": user.user.email])
                 self?.emailTextField.text = ""
                 self?.passwordTextField.text = ""
                 self?.errorLabel.textColor = .black
                 self?.displayWarningLabel(withText: "u have been registered")
-                
-                //self?.errorLabel.textColor = .red
             }
         }
-        
     }
     
-    
-    private func displayWarningLabel(withText text: String){
+    private func displayWarningLabel(withText text: String) {
         errorLabel.text = text
         
         UIView.animate(withDuration: 3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .autoreverse, animations: { [weak self] in
