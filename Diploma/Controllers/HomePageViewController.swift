@@ -9,6 +9,18 @@ import UIKit
 import Firebase
 class HomePageViewController: UIViewController {
     
+    
+    @IBOutlet private weak var totalValueLabel: UILabel!
+    
+    
+    @IBOutlet private weak var availableValueLabel: UILabel!
+    @IBOutlet private weak var expensesValueLabel: UILabel!
+    
+    @IBOutlet private weak var savingsValueLabel: UILabel!
+    
+    @IBOutlet private weak var percentageValueLabel: UILabel!
+    
+    
     var user: User!
 
     override func viewDidLoad() {
@@ -29,8 +41,14 @@ class HomePageViewController: UIViewController {
     }
     
     
+    @IBAction func addMoneyButton() {
+        
+        
+    }
     
-    @IBAction func addButton(_ sender: UIBarButtonItem) {
+    @IBAction func addExpenceButton() {
+        
+        
     }
     
 

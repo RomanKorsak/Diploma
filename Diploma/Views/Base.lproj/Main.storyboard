@@ -124,15 +124,26 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nc8-oo-vGY">
+                                        <rect key="frame" x="314.5" y="8" width="51.5" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="gray" title="➕"/>
+                                        <connections>
+                                            <action selector="addMoneyButton:" destination="1xC-E7-jGq" eventType="touchUpInside" id="mOv-CG-2zU"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="yMW-ko-u4Y" firstAttribute="top" secondItem="F3o-cd-rQc" secondAttribute="top" constant="8" id="0oY-ca-pLu"/>
+                                    <constraint firstItem="nc8-oo-vGY" firstAttribute="top" secondItem="F3o-cd-rQc" secondAttribute="top" constant="8" id="9gE-wr-We4"/>
+                                    <constraint firstItem="nc8-oo-vGY" firstAttribute="leading" relation="lessThanOrEqual" secondItem="yMW-ko-u4Y" secondAttribute="trailing" constant="270" id="Bny-s1-LXg"/>
                                     <constraint firstAttribute="height" constant="128" id="ChI-UP-Bzq"/>
                                     <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="CYl-Hl-dEW" secondAttribute="trailing" constant="250" id="Oai-rQ-Kaq"/>
                                     <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="yMW-ko-u4Y" secondAttribute="trailing" constant="344" id="WPz-9v-jDI"/>
                                     <constraint firstItem="yMW-ko-u4Y" firstAttribute="leading" secondItem="F3o-cd-rQc" secondAttribute="leading" constant="8" id="aYu-B0-7Be"/>
                                     <constraint firstItem="CYl-Hl-dEW" firstAttribute="centerY" secondItem="F3o-cd-rQc" secondAttribute="centerY" id="nsg-7W-zCg"/>
+                                    <constraint firstAttribute="trailing" secondItem="nc8-oo-vGY" secondAttribute="trailing" constant="8" id="r9C-zg-TFD"/>
                                     <constraint firstItem="CYl-Hl-dEW" firstAttribute="leading" secondItem="F3o-cd-rQc" secondAttribute="leading" constant="8" id="vyZ-oU-Zja"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -188,12 +199,23 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RQ9-pX-wQA">
+                                        <rect key="frame" x="130" y="8" width="44" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="gray" title="➕"/>
+                                        <connections>
+                                            <action selector="addExpenceButton" destination="1xC-E7-jGq" eventType="touchUpInside" id="92v-fh-fPi"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="2WX-LU-n9v"/>
                                     <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="54w-9X-3ou" secondAttribute="trailing" constant="120" id="9FN-zb-1Dc"/>
+                                    <constraint firstAttribute="trailing" secondItem="RQ9-pX-wQA" secondAttribute="trailing" constant="8" id="Dxk-AD-gad"/>
+                                    <constraint firstItem="RQ9-pX-wQA" firstAttribute="leading" relation="lessThanOrEqual" secondItem="38h-KW-0IF" secondAttribute="trailing" constant="49.5" id="F7G-p9-rJU"/>
                                     <constraint firstItem="38h-KW-0IF" firstAttribute="leading" secondItem="FyY-Bk-YIv" secondAttribute="leading" constant="8" id="Fqa-gL-5It"/>
+                                    <constraint firstItem="RQ9-pX-wQA" firstAttribute="top" secondItem="FyY-Bk-YIv" secondAttribute="top" constant="8" id="YNa-gj-4Mz"/>
                                     <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="38h-KW-0IF" secondAttribute="trailing" constant="120" id="a9v-Xe-MyG"/>
                                     <constraint firstItem="54w-9X-3ou" firstAttribute="leading" secondItem="FyY-Bk-YIv" secondAttribute="leading" constant="8" id="iID-vf-jvB"/>
                                     <constraint firstItem="54w-9X-3ou" firstAttribute="centerY" secondItem="FyY-Bk-YIv" secondAttribute="centerY" id="oeK-EY-hLA"/>
@@ -304,18 +326,22 @@
                             <constraint firstItem="FyY-Bk-YIv" firstAttribute="top" secondItem="F3o-cd-rQc" secondAttribute="bottom" constant="10" id="oe5-uB-Wim"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="SOv-2J-zo4">
                         <barButtonItem key="leftBarButtonItem" title="Sign Out" id="rHK-bi-bXg">
                             <connections>
                                 <action selector="signOutButton:" destination="1xC-E7-jGq" id="Xox-G8-Fxw"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="y6w-Cd-4Yd">
-                            <connections>
-                                <action selector="addButton:" destination="1xC-E7-jGq" id="Kn7-de-2ea"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="availableValueLabel" destination="dGG-7g-Y0j" id="Qiy-bU-wec"/>
+                        <outlet property="expensesValueLabel" destination="54w-9X-3ou" id="MuA-9M-GS5"/>
+                        <outlet property="percentageValueLabel" destination="tKy-i5-B5P" id="6zl-3c-XJa"/>
+                        <outlet property="savingsValueLabel" destination="Y4G-qQ-CQA" id="aCw-pi-rmS"/>
+                        <outlet property="totalValueLabel" destination="CYl-Hl-dEW" id="cTe-JZ-DGn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aOb-Tj-thW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
